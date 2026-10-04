@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sharan’s bachelor party: four trips for April</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Public+Sans:wght@400..700&display=swap">
+<style>
+:root{
+  --paper:#F3F5F7;--card:#FFFFFF;--ink:#17202E;--muted:#5B6573;--rule:#D8DEE6;
+  --pt:#1E4FA3;--jp:#B8342A;--sea:#A35F00;--cb:#1D7A46;--hl:#FFE27A;--shadow:rgba(23,32,46,.16);
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F141B;--card:#18202B;--ink:#E6EAF0;--muted:#9DA7B5;--rule:#2B3544;
+    --pt:#93B3F2;--jp:#F28B7D;--sea:#F0B35C;--cb:#7FD1A0;--hl:#5C4B0E;--shadow:rgba(0,0,0,.55);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F141B;--card:#18202B;--ink:#E6EAF0;--muted:#9DA7B5;--rule:#2B3544;
+  --pt:#93B3F2;--jp:#F28B7D;--sea:#F0B35C;--cb:#7FD1A0;--hl:#5C4B0E;--shadow:rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 1rem);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Public Sans","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;font-size:1rem;line-height:1.55;padding-bottom:4.5rem}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;line-height:1.12;letter-spacing:-.012em;margin:0 0 .5em;font-weight:700}
+h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;letter-spacing:-.028em;margin-bottom:.1em}
+h2{font-size:clamp(1.35rem,2.4vw,1.85rem)}
+h3{font-size:1.15rem}
+p{margin:0 0 .9em}
+a{color:var(--pt);text-underline-offset:.18em}
+:focus-visible{outline:2px solid var(--pt);outline-offset:3px}
+.nb{white-space:nowrap}
+mark{color:inherit;background:linear-gradient(180deg,transparent 0 36%,var(--hl) 36% 94%,transparent 94%);padding:0 .14em;border-radius:.1em;white-space:nowrap}
+.page{padding:0 clamp(1rem,3vw,3rem)}
+.note,.muted{color:var(--muted)}
+.intro-p{max-width:64rem}
+
+/* Header */
+.top{display:grid;gap:2rem;padding:2.5rem 0 2rem;align-items:start}
+@media (min-width:64rem){.top{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:4rem;padding:3.5rem 0 2.5rem}}
+.lede{font-family:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;font-size:clamp(1.15rem,2.2vw,1.5rem);color:var(--muted);font-weight:600;margin-bottom:1.1rem}
+.crewbox h2{font-size:1.05rem;margin-bottom:.6rem}
+.crew-list{list-style:none;margin:0 0 1.1rem;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
+.pill{appearance:none;font:inherit;font-weight:600;font-size:.95rem;line-height:1.3;padding:.4rem .85rem .4rem .7rem;border-radius:999px;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);display:inline-flex;align-items:center;gap:.4rem}
+.pill::before{content:"✓";display:inline-block;font-weight:800}
+.pill.groom{background:var(--hl);border-color:transparent;cursor:default}
+.pill.groom::before{content:none}
+.count{font-weight:700;margin:0 0 .2rem;font-variant-numeric:tabular-nums}
+.crew-note{font-size:.92rem;color:var(--muted);margin-top:.8rem;max-width:40rem}
+
+
+/* Bottom line banner */
+.banner{display:grid;gap:2rem;border-top:2px solid var(--ink);padding:2rem 0 2.75rem;align-items:start}
+@media (min-width:64rem){.banner{grid-template-columns:minmax(0,1.5fr) minmax(21rem,26rem);gap:4rem}}
+.banner h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+.say{font-size:1.15rem;max-width:62rem}
+.say p{margin-bottom:.8em}
+
+/* Decision timeline */
+.decide{border-top:2px solid var(--ink);padding:2rem 0 2.75rem}
+.steps{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));counter-reset:step}
+.steps li{counter-increment:step;background:var(--card);border:1px solid var(--rule);border-radius:.3rem;padding:.9rem 1.05rem 1.05rem;display:grid;gap:.3rem;align-content:start}
+.steps li::before{content:counter(step);font-family:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;font-weight:800;font-size:1.5rem;line-height:1;color:var(--pt)}
+.steps .when{font-size:.88rem;color:var(--muted);font-weight:600}
+.steps strong{font-size:1.05rem}
+.steps li.key{border-color:var(--ink);border-width:2px}
+
+/* Summary cards */
+.summary{border-top:2px solid var(--ink);padding:2rem 0 2.25rem}
+.cards{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.card{display:grid;gap:.5rem;align-content:start;background:var(--card);border:1px solid var(--rule);border-top:6px solid var(--c);border-radius:.3rem;padding:1.1rem 1.25rem 1.2rem;color:inherit;text-decoration:none}
+.card:hover{border-color:var(--c)}
+.card:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+.card .region{font-size:.9rem;color:var(--muted);font-weight:600}
+.card h3{font-size:1.5rem;margin:0}
+.card .tag{justify-self:start;font-size:.8rem;font-weight:700;background:var(--hl);padding:.05rem .45rem;border-radius:.2rem}
+.card .pitch{font-size:.95rem;margin:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.25rem 1rem;margin:.3rem 0 .2rem;font-variant-numeric:tabular-nums;border-top:1px solid var(--rule);padding-top:.6rem}
+.card dt{color:var(--muted)}
+.card dd{margin:0;font-weight:700;text-align:right}
+.card dd.plain{font-weight:400;color:var(--muted)}
+.card .meta{font-size:.88rem;color:var(--muted);margin:0}
+
+/* Tabs */
+.tabs{display:flex;gap:.25rem;border-bottom:2px solid var(--ink);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{appearance:none;border:0;background:transparent;cursor:pointer;padding:.85rem 1.15rem .7rem;font-family:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;font-weight:700;font-size:1.05rem;color:var(--muted);border-bottom:5px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--c)}
+.tab:focus-visible{outline:2px solid var(--pt);outline-offset:-2px}
+@media (max-width:44rem){.tab .reg{display:none}.tab{padding:.8rem .9rem .65rem}}
+
+/* Plan panel */
+.panel{display:grid;gap:2rem 3rem;padding:1.75rem 0 3rem}
+@media (min-width:64rem){.panel{grid-template-columns:minmax(0,1fr) minmax(21rem,25rem)}}
+.panel[hidden]{display:none}
+.phead h2{font-size:clamp(1.7rem,3vw,2.4rem);margin:0 0 .4rem;border-top:6px solid var(--c);padding-top:.75rem}
+.pitch{font-size:1.05rem;max-width:62rem}
+.controls{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;margin:1.1rem 0 1.5rem}
+.reset{appearance:none;border:0;background:transparent;padding:0;cursor:pointer;font:inherit;font-weight:600;color:var(--pt);text-decoration:underline;text-underline-offset:.18em}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem 2rem;margin:0 0 2rem}
+.facts div{border-top:1px solid var(--rule);padding-top:.6rem}
+.facts dt{font-weight:700;font-size:.88rem;color:var(--muted)}
+.facts dd{margin:.15rem 0 0}
+.sect{margin:0 0 2.25rem}
+.sect > h3{font-size:1.25rem;margin-bottom:.75rem}
+.days{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr))}
+.day{background:var(--card);border:1px solid var(--rule);border-radius:.3rem;padding:.95rem 1.05rem}
+.day h4{font-size:1.02rem;margin:0 0 .3rem}
+.day p{margin:0 0 .45rem;font-size:.97rem}
+.opt{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.opt{padding:.5rem 0 .15rem;border-top:1px dashed var(--rule);font-size:.95rem}
+.opt input{width:1.05rem;height:1.05rem;margin:.2rem 0 0;accent-color:var(--c);flex:none;cursor:pointer}
+.amt{margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--muted);padding-left:.75rem}
+.opt.off .txt{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+.twocol{display:grid;gap:0 3rem}
+@media (min-width:48rem){.twocol{grid-template-columns:1fr 1fr}}
+.notes,.book{margin:0;padding-left:1.15rem;max-width:62rem}
+.notes li,.book li{margin:.4rem 0}
+.book li::marker{font-weight:700;color:var(--c)}
+
+/* Receipt */
+.aside{min-width:0}
+.receipt-wrap{filter:drop-shadow(0 16px 24px var(--shadow));margin-bottom:1rem}
+@media (min-width:64rem){.aside .receipt-wrap{position:sticky;top:calc(env(safe-area-inset-top,0px) + 1rem)}}
+.receipt{position:relative;background:var(--card);padding:1.4rem 1.4rem 1.3rem;border-radius:.4rem .4rem 0 0}
+.receipt::after{content:"";position:absolute;left:0;right:0;top:100%;height:11px;background:conic-gradient(from -45deg at bottom,var(--card) 90deg,transparent 0) 0 0/22px 100% repeat-x}
+.receipt h3{font-size:1.3rem;margin:0 0 .2rem}
+.receipt .when{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.lines{list-style:none;margin:0;padding:0;font-variant-numeric:tabular-nums}
+.lines li{display:flex;align-items:baseline;gap:.5rem;padding:.26rem 0}
+.lines .dots{flex:1 1 auto;min-width:.75rem;border-bottom:2px dotted var(--rule);transform:translateY(-.3em)}
+.lines .v{white-space:nowrap}
+.lines .total{margin-top:.5rem;padding-top:.65rem;border-top:2px solid var(--ink);font-weight:700}
+.lines .total .v{font-size:1.35rem}
+.lines .groom{font-weight:600}
+.fine{margin:.9rem 0 0;font-size:.88rem;color:var(--muted)}
+.fine p{margin:.25rem 0}
+@media (max-width:30rem){.receipt{padding:1.3rem 1.1rem 1.2rem}.lines li{font-size:.95rem;gap:.4rem}.lines .total .v{font-size:1.12rem}}
+
+/* More */
+.more{border-top:2px solid var(--ink);padding:2rem 0 2.5rem}
+.more h2{margin-top:0}
+details{margin:1.25rem 0 1.5rem}
+summary{cursor:pointer;font-weight:700;font-size:1.05rem}
+.sources{padding-left:1.15rem;font-size:.93rem;columns:2 24rem;column-gap:3rem;margin-top:.75rem}
+.sources li{margin:.3rem 0;break-inside:avoid}
+
+/* Phone total bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;background:var(--ink);color:var(--paper);padding:.7rem clamp(1rem,3vw,3rem);padding-bottom:calc(.7rem + env(safe-area-inset-bottom,0px));font-weight:600;font-size:.95rem}
+.mbar b{font-size:1.05rem;font-variant-numeric:tabular-nums}
+@media (min-width:64rem){.mbar{display:none}body{padding-bottom:0}}
+
+@media print{
+  :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--paper:#fff;--card:#fff;--ink:#111;--muted:#444;--rule:#bbb;--hl:#FFE27A;--pt:#1E4FA3;--jp:#B8342A;--sea:#A35F00;--cb:#1D7A46;padding:0;color-scheme:light}
+  body{padding-bottom:0;font-size:10pt}
+  .mbar,.tabs,.reset{display:none}
+  .panel[hidden]{display:grid}
+  .panel{break-before:page;grid-template-columns:minmax(0,1fr) 17rem}
+  .receipt-wrap{position:static;filter:none;border:1px solid #bbb}
+  .receipt::after{display:none}
+  .card,.day,.steps li,tr{break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div class="intro">
+      <h1>Sharan’s bachelor party</h1>
+      <p class="lede">Four trips for April 2027</p>
+    </div>
+    <div class="crewbox">
+      <h2 id="crew-h">The crew</h2>
+      <ul class="crew-list" id="crew" aria-labelledby="crew-h"></ul>
+      <p class="count" id="count" aria-live="polite"></p>
+      <p class="crew-note">We’re planning on nine. Sharan’s share of the trip is covered after he books his own flight.</p>
+    </div>
+  </header>
+
+  <section class="banner" aria-labelledby="bl-h">
+    <div class="say">
+      <h2 id="bl-h">Bottom line</h2>
+      <div id="bottomline"></div>
+    </div>
+    <aside class="receipt-wrap" aria-label="Cost of our pick"><div class="receipt" id="rc-pick"></div></aside>
+  </section>
+
+  <section class="decide" aria-labelledby="decide-h">
+    <h2 id="decide-h">How and when we decide</h2>
+    <p class="intro-p">A ranked-choice poll in the group chat, Sharan breaks ties, and a deposit is what counts as a yes. Bali forces the pace: Australian school holidays cover most of April, so its villas have to be booked early, and everything is locked by October 19.</p>
+    <ol class="steps">
+      <li><span class="when">Now to Sunday, October 11</span><strong>Look it over</strong><span>Everyone plays with the plans below and posts any dealbreakers in the chat.</span></li>
+      <li><span class="when">Monday, October 12 to Thursday, October 15</span><strong>Vote</strong><span>Rank the four trips. Sharan breaks any tie.</span></li>
+      <li class="key"><span class="when">Sunday, October 18</span><strong>Headcount cutoff</strong><span>You’re in once your $400 deposit hits the group fund, which covers most of your share of lodging. No deposit by Sunday night means no bed.</span></li>
+      <li><span class="when">Monday, October 19</span><strong>Book the beds</strong><span>Lodging for everyone who paid. Bali needs this date; the other three can wait until December or January.</span></li>
+      <li><span class="when">After October 19</span><strong>The drop rule</strong><span>Drop out after this and your lodging share stays in, unless someone takes your spot.</span></li>
+      <li><span class="when">By late November</span><strong>Flights</strong><span>Everyone books their own, Sharan included, on the same itinerary.</span></li>
+      <li><span class="when">March</span><strong>Activities and paperwork</strong><span>Book boats, karts, and rafting directly. AAA permits for Tokyo karting, plus Bali’s e-visa or ETIAS as needed.</span></li>
+    </ol>
+  </section>
+
+  <section class="summary" aria-labelledby="sum-h">
+    <h2 id="sum-h">The four options</h2>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <div id="plans">
+    <div class="tabs" role="tablist" aria-label="Plans" id="tablist"></div>
+    <div id="panels"></div>
+  </div>
+
+  <section class="more" aria-labelledby="split-h">
+    <h2 id="split-h">How we split it</h2>
+    <div class="twocol">
+      <div>
+        <h3>Shared</h3>
+        <p>Lodging, the van or driver, boats and group activities, groceries and pre-game supplies, beach club daybeds, and Sharan’s share of all of it. Split among everyone paying.</p>
+      </div>
+      <div>
+        <h3>Paid individually</h3>
+        <p>Your own flight, personal drinks and snacks beyond the group stock, and souvenirs. Sharan books his own flight too.</p>
+      </div>
+    </div>
+
+    <details>
+      <summary>Sources</summary>
+      <ul class="sources">
+        <li>Aruba: <a href="https://www.momondo.com/flights/san-francisco/aruba" target="_blank" rel="noopener noreferrer">SFO to Aruba fares</a>, <a href="https://www.thetopvillas.com/en_us/destinations/caribbean/aruba/noord/aruba-24" target="_blank" rel="noopener noreferrer">5-bedroom villa rates</a>, <a href="https://truetripcosts.com/aruba/hotel-taxes-and-fees/" target="_blank" rel="noopener noreferrer">lodging taxes</a>, <a href="https://onehappyisland.com/aruba-in-april/" target="_blank" rel="noopener noreferrer">April prices</a>, <a href="https://www.jolly-pirates.com/cruise/" target="_blank" rel="noopener noreferrer">Jolly Pirates</a>, <a href="https://www.kukookunuku.com/tours/kukoo-kunuku-bar-hopping/" target="_blank" rel="noopener noreferrer">Kukoo Kunuku</a>, <a href="https://www.arubaplaybook.com/blog/aruba-natural-pool-worth-it" target="_blank" rel="noopener noreferrer">UTV tours</a>, <a href="https://depalmisland.com/signature-experiences/beach-cabanas/" target="_blank" rel="noopener noreferrer">cabanas</a>, <a href="https://www.arubaplaybook.com/blog/aruba-taxi-rates" target="_blank" rel="noopener noreferrer">taxi fares</a>, <a href="https://www.arubatourism.org/how-much-does-a-trip-to-aruba-cost/" target="_blank" rel="noopener noreferrer">food and drink prices</a>, and <a href="https://www.arubaplaybook.com/blog/aruba-ed-card-guide" target="_blank" rel="noopener noreferrer">the ED card fee</a>.</li>
+        <li><a href="https://seatemperature.info/april/tenerife-water-temperature.html" target="_blank" rel="noopener noreferrer">Tenerife’s April sea temperature</a>.</li>
+        <li><a href="https://www.google.com/travel/flights/flights-from-san-francisco-to-tenerife.html" target="_blank" rel="noopener noreferrer">SFO to Tenerife fares</a>.</li>
+        <li><a href="https://mediohippie.com/en/things-to-know-before-visiting-siam-park-in-2026/" target="_blank" rel="noopener noreferrer">Siam Park prices</a>, <a href="https://boatpartytickets.com/boat-parties/insomnia-boat-party-tenerife/" target="_blank" rel="noopener noreferrer">the Tenerife Boat Party</a>, and <a href="https://www.funktionevents.co.uk/stag-do/spain/tenerife" target="_blank" rel="noopener noreferrer">the Veronicas strip</a>.</li>
+        <li><a href="https://www.kayak.com/flight-routes/ZIPAIR-San-Francisco-SFO/Tokyo-Narita-NRT.b.ZG.ksp" target="_blank" rel="noopener noreferrer">ZIPAIR fares</a>, <a href="https://globalstay.co.uk/tokyo-hotel-prices-2026/" target="_blank" rel="noopener noreferrer">Tokyo hotel prices</a>, <a href="https://streetkartshibuya.com/blog/how-much-does-tokyo-go-karting-cost/" target="_blank" rel="noopener noreferrer">karting prices</a>, and <a href="https://tokyocheapo.com/entertainment/mario-kart-in-tokyo-guide/" target="_blank" rel="noopener noreferrer">the driving permit rule</a>.</li>
+        <li><a href="https://www.kayak.com/flight-routes/San-Francisco-SFO/Denpasar-Bali-Ngurah-Rai-DPS" target="_blank" rel="noopener noreferrer">SFO to Bali</a>, <a href="https://thehoneycombers.com/bali/best-villas-in-canggu/" target="_blank" rel="noopener noreferrer">Canggu villas</a>, <a href="https://balitravelguideplus.com/practical/customs-allowances" target="_blank" rel="noopener noreferrer">customs allowances</a>, <a href="https://balithisweek.co.id/urgent-alert-rising-methanol-poisoning-threatens-tourists-in-baliheres-how-to-stay-safe/" target="_blank" rel="noopener noreferrer">methanol advice</a>, and <a href="https://www.simplecalendar.com.au/blog/school-holidays-2027-parents-guide" target="_blank" rel="noopener noreferrer">Australian school holidays</a>.</li>
+      </ul>
+    </details>
+  </section>
+</main>
+<div class="mbar" id="mbar" aria-hidden="true"></div>
+
+<script>
+(function () {
+"use strict";
+
+var CREW = ["Sean", "Bryce", "Derek J", "Derek Q", "Kevin", "Charles", "Sid", "Amulya"];
+
+var ETIAS = "Budget €20 each for ETIAS in case the EU’s new travel authorization is live by April.";
+var TENERIFE_NOTES = [
+  "Tenerife’s south coast averages about 67°F in the water in April, the warmest we found in Europe. Bracing, but swimmable.",
+  "The Tenerife Boat Party sails Wednesday, Friday, Saturday, and Sunday, with an open bar.",
+  "Siam Park is Europe’s biggest water park and has been voted the world’s best by TripAdvisor users."
+];
+var TOKYO_PERMIT = "Anyone karting needs a paper 1949-convention International Driving Permit from AAA, about $20, or they’re turned away with no refund.";
+var BALI_NOTES = [
+  "Indonesia allows one liter of alcohol duty-free per person, and it can’t be pooled.",
+  "Local safety campaigners say stick to beer, wine, or duty-free spirits because of methanol in bootleg liquor.",
+  "No scooters. Crashes are the most common cause of serious injury for tourists there."
+];
+
+var DESTS = {
+  tenerife: {
+    name: "Tenerife", short: "Tenerife", color: "var(--pt)", tag: "Beach and boat parties",
+    pitch: "A pool villa near Playa de las Américas, boat parties, Siam Park, jet skis, and the Veronicas strip, with Europe’s warmest April water.",
+    weather: "Low 70s, sea about 67°F", fly: "About 15 hrs from SF with one stop, 9 from NYC",
+    flights: { crew: [900, 1350] },
+    len: {
+      5: {
+        dates: "Wednesday, April 14 to Monday, April 19, 2027", off: "About 3½ days", nights: 4, ltype: "house",
+        flightsNote: "Plan on one stop through Madrid or another European hub. United has run a seasonal nonstop from Newark, so check whether it’s back. Land Thursday and fly home Monday.",
+        stay: "One pool villa near Playa de las Américas, twin-share.",
+        lodging: [1280, 2560], food: [35, 65], tper: [30, 55], tshared: [0, 0], extras: [25, 50],
+        items: {
+          veronicas: { label: "The Veronicas strip, ending at Tramps, open until 6am", cost: [10, 25], on: true },
+          siam: { label: "Siam Park water park", cost: [48, 55], on: true },
+          boat: { label: "Tenerife Boat Party: open bar, DJs, and a swim stop", cost: [70, 100], on: true },
+          jetski: { label: "Jet skis or flyboarding", cost: [60, 100], on: true },
+          beachclub: { label: "One shared beach club daybed", cost: [25, 40], on: true },
+          buggy: { label: "Buggy tour up Mount Teide", cost: [60, 90], on: false }
+        },
+        days: [
+          { d: "Thu, Apr 15", t: "Land, pool at the villa, supermarket run, then the strip.", i: ["veronicas"] },
+          { d: "Fri, Apr 16", t: "A day on the slides, then out again.", i: ["siam"] },
+          { d: "Sat, Apr 17", t: "Afternoon on the party boat, then the big night.", i: ["boat"] },
+          { d: "Sun, Apr 18", t: "Engines in the morning, beach club in the afternoon.", i: ["jetski", "beachclub", "buggy"] },
+          { d: "Mon, Apr 19", t: "Fly home.", i: [] }
+        ],
+        notes: TENERIFE_NOTES.concat(["Drinks on the Veronicas strip are cheap by European standards.", ETIAS]),
+        book: [
+          "By late November: book flights.",
+          "December to January: book the villa.",
+          "March: buy boat party and Siam Park tickets online.",
+          "The week before: sort out ETIAS if it’s live."
+        ]
+      }
+    }
+  },
+
+  tokyo: {
+    name: "Tokyo", short: "Tokyo", color: "var(--jp)", tag: "Karts, coasters, and bars",
+    pitch: "Street karts, Fuji-Q, baseball, river rafting, and Golden Gai, a week after the cherry blossom prices drop.",
+    weather: "60s, cool nights", fly: "11 hrs nonstop from SF, 14 from NYC",
+    flights: { crew: [600, 950] },
+    len: {
+      7: {
+        dates: "Saturday, April 10 to Sunday, April 18, 2027", off: "5 days, Monday to Friday", nights: 7, ltype: "rooms",
+        flightsNote: "Most big US hubs fly nonstop to Tokyo, about 11 hours from the West Coast and 14 from the East. ZIPAIR is the budget option from the West Coast. Leave Saturday, land Sunday evening, and fly home the next Sunday night.",
+        stay: "Twin rooms in one business hotel in Asakusa or Ueno for the whole week.",
+        lodging: [1960, 3500], food: [40, 70], tper: [85, 150], tshared: [0, 0], extras: [45, 60],
+        items: {
+          round1: { label: "Batting cages, bowling, and arcades at Round1", cost: [15, 25], on: true },
+          nomihodai: { label: "All-you-can-drink izakaya, then private karaoke", cost: [20, 35], on: true },
+          samurai: { label: "Samurai Restaurant show, the Robot Restaurant’s successor", cost: [60, 70], on: false },
+          kart: { label: "Street-kart tour through Akihabara", cost: [70, 80], on: true },
+          goldengai: { label: "Golden Gai bar crawl, cover charges", cost: [10, 20], on: true },
+          okutama: { label: "Okutama river rafting, 90 minutes by regular train", cost: [55, 75], on: true },
+          thrift: { label: "Shimokitazawa thrift challenge: worst outfit under ¥2,000", cost: [13, 15], on: true },
+          baseball: { label: "Pro baseball: Swallows at Jingu or Giants at Tokyo Dome", cost: [15, 30], on: true },
+          fujiq: { label: "Fuji-Q Highland, with the bus and ride pass", cost: [65, 80], on: true },
+          club: { label: "A Shibuya club night", cost: [15, 30], on: true },
+          joypolis: { label: "Tokyo Joypolis indoor theme park in Odaiba", cost: [30, 45], on: true },
+          lastnight: { label: "Last big night in Roppongi", cost: [15, 30], on: true }
+        },
+        days: [
+          { d: "Sun, Apr 11", t: "Land in the evening, train into town, late ramen near the hotel.", i: [] },
+          { d: "Mon, Apr 12", t: "Tsukiji Outer Market breakfast crawl, then games and a big night.", i: ["round1", "nomihodai", "samurai"] },
+          { d: "Tue, Apr 13", t: "Karts by day, yakitori in Omoide Yokocho at night.", i: ["kart", "goldengai"] },
+          { d: "Wed, Apr 14", t: "A day on the river in the mountains west of the city.", i: ["okutama"] },
+          { d: "Thu, Apr 15", t: "Thrift shopping, then a ballgame in the outfits.", i: ["thrift", "baseball"] },
+          { d: "Fri, Apr 16", t: "Highway bus from Shinjuku to the coasters, with Mt. Fuji behind them.", i: ["fujiq", "club"] },
+          { d: "Sat, Apr 17", t: "Rides in Odaiba, then the last big night.", i: ["joypolis", "lastnight"] },
+          { d: "Sun, Apr 18", t: "Slow morning, souvenir run, then Narita for the night flight home.", i: [] }
+        ],
+        notes: [
+          TOKYO_PERMIT,
+          "Okutama’s rafting season opens in April, so book an operator that’s already running by mid-month.",
+          "SFO to Narita has tended to be priciest on Saturdays and cheapest on Tuesdays, so price a Friday departure too."
+        ],
+        book: [
+          "December to January: book the hotel.",
+          "By early March: book flights. Tokyo fares have tended to be cheapest about six weeks out.",
+          "March: everyone karting gets an AAA permit, and we book the karts and Okutama rafting."
+        ]
+      }
+    }
+  },
+
+  bali: {
+    name: "Bali", short: "Bali", color: "var(--sea)", tag: "Pool villa and beach clubs",
+    pitch: "A Canggu pool villa, surf, beach clubs, rafting and ATVs, a Nusa Penida boat day, and Savaya on the cliffs.",
+    weather: "80s, sea in the mid-80s", fly: "20+ hrs from SF with one stop, 24+ from NYC",
+    flights: { crew: [750, 1050] },
+    len: {
+      7: {
+        dates: "Friday, April 9 (overnight flight) to Sunday, April 18, 2027", off: "5 days, Monday to Friday", nights: 7, ltype: "house",
+        flightsNote: "No nonstops from the US, so everyone connects through an Asian hub like Singapore, Taipei, Tokyo, Hong Kong, or Manila. Count on 20-plus hours. Leave Friday night, land Sunday morning, and fly home the next Sunday.",
+        stay: "One pool villa in Canggu for the week, twin-share.",
+        lodging: [1400, 2800], food: [30, 55], tper: [0, 0], tshared: [330, 510], extras: [85, 115],
+        items: {
+          surf: { label: "Group surf lesson at Batu Bolong", cost: [25, 35], on: true },
+          raft: { label: "Ayung River rafting and ATV combo", cost: [45, 75], on: true },
+          spa: { label: "In-villa massages and a villa-chef roast night", cost: [25, 40], on: true },
+          penida: { label: "Private boat to Nusa Penida: snorkeling and cliffs", cost: [50, 75], on: true },
+          daybed: { label: "One shared daybed at Finns or Atlas", cost: [25, 40], on: true },
+          savaya: { label: "Savaya on the Uluwatu cliffs", cost: [40, 80], on: true }
+        },
+        days: [
+          { d: "Sun, Apr 11", t: "Land, driver to the villa, warung dinner, pool night.", i: [] },
+          { d: "Mon, Apr 12", t: "Surf, then sunset beers on the beach.", i: ["surf"] },
+          { d: "Tue, Apr 13", t: "River and quad bikes.", i: ["raft"] },
+          { d: "Wed, Apr 14", t: "Recovery day, then roast night at the villa.", i: ["spa"] },
+          { d: "Thu, Apr 15", t: "A day on the water.", i: ["penida"] },
+          { d: "Fri, Apr 16", t: "Beach club day.", i: ["daybed"] },
+          { d: "Sat, Apr 17", t: "The one splurge night, pre-gamed at the villa.", i: ["savaya"] },
+          { d: "Sun, Apr 18", t: "Fly home.", i: [] }
+        ],
+        notes: BALI_NOTES,
+        book: [
+          "October 19: book the villa, since Australian school holidays cover most of April.",
+          "By mid-February: book flights, and check passports have six months’ validity.",
+          "The week before: pay the e-visa and tourism levy online, about $45 each."
+        ]
+      }
+    }
+  },
+
+  aruba: {
+    name: "Aruba", short: "Aruba", color: "var(--cb)", tag: "Beach villa, short trip",
+    pitch: "A pool villa near Palm Beach, a catamaran day, the Kukoo Kunuku party bus, UTVs to the Natural Pool, and the Palm Beach strip.",
+    weather: "Mid-80s, dry and breezy", fly: "About 10 hrs from SF with one stop, 4½ from NYC",
+    flights: { crew: [575, 950] },
+    len: {
+      4: {
+        dates: "Wednesday, April 14 (red-eye) to Sunday, April 18, 2027", off: "2 days, Thursday and Friday", nights: 3, ltype: "house",
+        flightsNote: "About 16 US airports fly nonstop, mostly on the East Coast and in the South, plus Chicago, Dallas, and Houston, in 3 to 5 hours. From the West Coast it’s one stop, so a Wednesday red-eye gets you in Thursday. Land Thursday and fly home Sunday afternoon.",
+        stay: "One 5-bedroom pool villa near Palm Beach or Eagle Beach for all of us, with the 12.5% tourist levy and cleaning fee in the price.",
+        lodging: [1570, 2610], food: [50, 90], tper: [0, 0], tshared: [550, 750], extras: [30, 50],
+        items: {
+          strip: { label: "A night out on the Palm Beach strip", cost: [30, 60], on: true },
+          catamaran: { label: "Catamaran or pirate-ship snorkel trip with an open bar", cost: [76, 108], on: true },
+          kukoo: { label: "Kukoo Kunuku party bus bar crawl", cost: [79, 85], on: true },
+          utv: { label: "UTV tour of the north coast and the Natural Pool, with park entry", cost: [105, 150], on: true },
+          cabana: { label: "One shared beach cabana for the day", cost: [45, 55], on: true },
+          dinner: { label: "One big dinner out at a spot like Flying Fishbone", cost: [90, 180], on: true },
+          jetski: { label: "Jet skis, 30 minutes", cost: [55, 110], on: false }
+        },
+        days: [
+          { d: "Thu, Apr 15", t: "Land, villa, grocery run, sunset beers, then out on the Palm Beach strip.", i: ["strip"] },
+          { d: "Fri, Apr 16", t: "A morning on the water, then the party bus at night.", i: ["catamaran", "kukoo"] },
+          { d: "Sat, Apr 17", t: "UTVs in the morning, the cabana in the afternoon, then a big dinner and the last night.", i: ["utv", "cabana", "dinner", "jetski"] },
+          { d: "Sun, Apr 18", t: "Beach morning on Eagle Beach, then fly home.", i: [] }
+        ],
+        notes: [
+          "Mid-April is just after Aruba’s high season, so rates start to drop while the weather stays dry and sunny.",
+          "Bring a passport. Everyone fills out Aruba’s online ED card before flying and pays the $20 sustainability fee.",
+          "There’s no Uber. Taxis have fixed government fares instead of meters, $41 from the airport to Palm Beach for up to four, with surcharges at night and on Sundays.",
+          "Arikok National Park, where the Natural Pool is, charges $22 to get in. Some UTV tours include it.",
+          "Drinks add up: about $5–8 for a beer and $10–15 for a cocktail at most bars."
+        ],
+        book: [
+          "December to January: book the villa.",
+          "By mid-January: book flights. New York has nonstops; from SF it’s usually one stop.",
+          "March: book the catamaran, the party bus, and the UTVs, and confirm whether the UTV price includes park entry.",
+          "The week before: everyone fills out the ED card online."
+        ]
+      }
+    }
+  }
+};
+
+var TABS = [
+  { id: "cb", region: "Caribbean", dests: ["aruba"] },
+  { id: "europe", region: "Europe", dests: ["tenerife"] },
+  { id: "japan", region: "Japan", dests: ["tokyo"] },
+  { id: "sea", region: "Southeast Asia", dests: ["bali"] }
+];
+var DEF_SEL = { europe: { dest: "tenerife", len: 5 }, japan: { dest: "tokyo", len: 7 }, sea: { dest: "bali", len: 7 }, cb: { dest: "aruba", len: 4 } };
+var KEY = "bp-plans-v8";
+
+function fresh(dk, L) {
+  var c = DESTS[dk].len[L], items = {};
+  Object.keys(c.items).forEach(function (k) { items[k] = !!c.items[k].on; });
+  return { items: items };
+}
+
+function load() {
+  var base = { tab: "cb", sel: DEF_SEL, tg: {} };
+  var s = null;
+  try { s = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { s = null; }
+  if (!s || typeof s !== "object") return base;
+  if (TABS.some(function (t) { return t.id === s.tab; })) base.tab = s.tab;
+  if (s.tg) Object.keys(s.tg).forEach(function (k) {
+    var parts = k.split("-"), dk = parts[0], L = +parts[1];
+    if (!DESTS[dk] || !DESTS[dk].len[L]) return;
+    var f = fresh(dk, L), g = s.tg[k] || {};
+    Object.keys(f.items).forEach(function (id) { if (g.items && typeof g.items[id] === "boolean") f.items[id] = g.items[id]; });
+    base.tg[k] = f;
+  });
+  return base;
+}
+
+var state = load();
+function persist() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+function tg(dk, L) { var k = dk + "-" + L; if (!state.tg[k]) state.tg[k] = fresh(dk, L); return state.tg[k]; }
+function heads() { return 1 + CREW.length; }
+
+var r5 = function (x) { return Math.round(x / 5) * 5; };
+var r50 = function (x) { return Math.round(x / 50) * 50; };
+var r100 = function (x) { return Math.round(x / 100) * 100; };
+function range(a, rf) {
+  rf = rf || r50;
+  var lo = rf(a[0]), hi = rf(a[1]);
+  var f = function (n) { return n.toLocaleString("en-US"); };
+  return lo === hi ? "$" + f(lo) : "$" + f(lo) + "–" + f(hi);
+}
+
+// Base lodging prices are for eight. Hotels scale by twin rooms; houses and villas step up by size.
+function lodgeFactor(type, n) {
+  var rooms = Math.ceil(n / 2) / 4;
+  var house = n <= 4 ? 0.6 : n <= 6 ? 0.8 : n <= 8 ? 1 : n <= 10 ? 1.15 : 1.3;
+  return type === "rooms" ? rooms : type === "mixed" ? (rooms + house) / 2 : house;
+}
+
+function calc(dk, L, t, N) {
+  var d = DESTS[dk], c = d.len[L], P = N - 1, fl = d.flights, lf = lodgeFactor(c.ltype, N);
+  var parts = { flights: [0, 0], lodging: [0, 0], food: [0, 0], activities: [0, 0], transport: [0, 0], extras: [0, 0] };
+  function add(k, a, m) { m = (m === undefined) ? 1 : m; parts[k][0] += a[0] * m; parts[k][1] += a[1] * m; }
+  add("flights", fl.crew, N - 1);
+  add("lodging", c.lodging, lf);
+  add("food", c.food, c.nights * N);
+  Object.keys(c.items).forEach(function (id) { if (t.items[id]) add("activities", c.items[id].cost, N); });
+  add("transport", c.tper, N);
+  add("transport", c.tshared);
+  add("extras", c.extras, N);
+  var total = [0, 0];
+  Object.keys(parts).forEach(function (k) { total[0] += parts[k][0]; total[1] += parts[k][1]; });
+  var per = {};
+  Object.keys(parts).forEach(function (k) { per[k] = [parts[k][0] / P, parts[k][1] / P]; });
+  return { total: total, per: [total[0] / P, total[1] / P], parts: per, P: P,
+           share: Math.round(100 * (parts.flights[0] + parts.flights[1]) / (total[0] + total[1])) };
+}
+
+function def(dk, L) { return calc(dk, L, fresh(dk, L), heads()).per; }
+
+function receiptHTML(dk, L, t, title) {
+  var d = DESTS[dk], c = d.len[L], N = heads(), r = calc(dk, L, t, N);
+  var lines = [["Your flight", r.parts.flights], ["Lodging", r.parts.lodging], ["Food and drinks", r.parts.food],
+               ["Activities and nights out", r.parts.activities], ["Getting around", r.parts.transport], ["Visas, phones, and extras", r.parts.extras]];
+  return '<h3>' + title + '</h3><p class="when">' + c.dates + '</p>' +
+    '<ul class="lines">' + lines.map(function (l) {
+      return '<li><span>' + l[0] + '</span><span class="dots" aria-hidden="true"></span><span class="v">' + range(l[1], r5) + '</span></li>';
+    }).join("") +
+    '<li class="total"><span>Each of the ' + r.P + '</span><span class="dots" aria-hidden="true"></span><span class="v"><mark>' + range(r.per) + '</mark></span></li>' +
+    '<li class="groom"><span>Sharan</span><span class="dots" aria-hidden="true"></span><span class="v">His own flight</span></li></ul>' +
+    '<div class="fine"><p>All ' + r.P + ' paying together: ' + range(r.total, r100) + '.</p>' +
+    '<p>Flights are about ' + r.share + '% of this version.</p><p>Time off: ' + c.off + '. Flying: ' + d.fly + '.</p></div>';
+}
+
+function renderCrew() {
+  var N = heads();
+  document.getElementById("crew").innerHTML = CREW.map(function (n) {
+    return '<li><span class="pill">' + n + '</span></li>';
+  }).join("") + '<li><span class="pill groom">Sharan, the groom</span></li>';
+  document.getElementById("count").textContent = N + " going, " + (N - 1) + " paying";
+}
+
+function renderBanner() {
+  var P = heads() - 1;
+  document.getElementById("bottomline").innerHTML =
+    '<p>We’ll vote on one of four trips. Aruba is the shortest and simplest from the States, and Bali is the most ambitious (and probably the most fun if we’re all down for it). Tenerife and Tokyo sit in the middle.</p>' +
+    '<p>Sharan covers his own flight, and we split his share of everything on the ground, which comes to about $100–200 each depending on the trip.</p>';
+  document.getElementById("rc-pick").innerHTML = '<h3>Each of the ' + P + '</h3><p class="when">Your own flight included</p>' +
+    '<ul class="lines">' + TABS.map(function (t) {
+      var dk = t.dests[0], L = DEF_SEL[t.id].len;
+      return '<li><span>' + DESTS[dk].name + ', ' + L + ' days</span><span class="dots" aria-hidden="true"></span><span class="v"><mark>' + range(def(dk, L)) + '</mark></span></li>';
+    }).join("") + '</ul>';
+}
+
+function renderCards() {
+  document.getElementById("cards").innerHTML = TABS.map(function (t) {
+    var fk = t.dests[0], d = DESTS[fk], L = DEF_SEL[t.id].len;
+    return '<a class="card" href="#plans" data-tab="' + t.id + '" style="--c:' + d.color + '">' +
+      '<span class="region">' + t.region + '</span>' +
+      '<h3>' + d.name + '</h3>' +
+      '<span class="tag">' + d.tag + '</span>' +
+      '<p class="pitch">' + d.pitch + '</p>' +
+      '<dl><dt>' + L + ' days</dt><dd>' + range(def(fk, L)) + '</dd></dl>' +
+      '<p class="meta">' + d.weather + '. ' + d.fly + '.</p>' +
+      '</a>';
+  }).join("");
+}
+
+function renderTabs() {
+  document.getElementById("tablist").innerHTML = TABS.map(function (t) {
+    var d = DESTS[state.sel[t.id].dest], sel = t.id === state.tab, nm = d.len[state.sel[t.id].len].short || d.short;
+    return '<button type="button" class="tab" role="tab" id="tab-' + t.id + '" aria-controls="panel-' + t.id + '" aria-selected="' + sel +
+      '" tabindex="' + (sel ? 0 : -1) + '" data-tab="' + t.id + '" style="--c:' + d.color + '"><span class="reg">' + t.region + ': </span>' + nm + '</button>';
+  }).join("");
+}
+
+function renderPanels() {
+  document.getElementById("panels").innerHTML = TABS.map(function (t) {
+    return '<section class="panel" role="tabpanel" id="panel-' + t.id + '" aria-labelledby="tab-' + t.id + '"' + (t.id === state.tab ? "" : " hidden") + '></section>';
+  }).join("");
+  TABS.forEach(function (t) { renderPanel(t.id); });
+}
+
+function renderPanel(tid) {
+  var dk = state.sel[tid].dest, L = state.sel[tid].len, d = DESTS[dk], c = d.len[L], g = tg(dk, L);
+  var el = document.getElementById("panel-" + tid);
+  el.style.setProperty("--c", d.color);
+  var days = c.days.map(function (day) {
+    return '<div class="day"><h4>' + day.d + '</h4><p>' + day.t + '</p>' + day.i.map(function (id) {
+      var it = c.items[id];
+      return '<label class="opt"><input type="checkbox" data-kind="item" data-tab="' + tid + '" data-id="' + id + '"' + (g.items[id] ? " checked" : "") +
+        '><span class="txt">' + it.label + '</span><span class="amt">' + range(it.cost, r5) + ' each</span></label>';
+    }).join("") + '</div>';
+  }).join("");
+  el.innerHTML =
+    '<div class="main">' +
+      '<div class="phead"><h2>' + d.name + ', ' + L + ' days</h2><p class="pitch">' + d.pitch + '</p></div>' +
+      '<div class="controls"><button type="button" class="reset" data-kind="reset" data-tab="' + tid + '">Reset this plan</button></div>' +
+      '<dl class="facts">' +
+        '<div><dt>Dates</dt><dd>' + c.dates + '</dd></div>' +
+        '<div><dt>Flights</dt><dd>' + c.flightsNote + '</dd></div>' +
+        '<div><dt>Stay</dt><dd>' + c.stay + '</dd></div>' +
+        '<div><dt>Time off</dt><dd>' + c.off + '</dd></div>' +
+        '<div><dt>Weather</dt><dd>' + d.weather + '</dd></div>' +
+      '</dl>' +
+      '<div class="sect"><h3>Things we could do</h3><div class="days">' + days + '</div></div>' +
+      '<div class="twocol">' +
+        '<div class="sect"><h3>Good to know</h3><ul class="notes">' + c.notes.map(function (n) { return "<li>" + n + "</li>"; }).join("") + '</ul></div>' +
+        '<div class="sect"><h3>Book it</h3><ol class="book">' + c.book.map(function (n) { return "<li>" + n + "</li>"; }).join("") + '</ol></div>' +
+      '</div>' +
+    '</div>' +
+    '<aside class="aside" aria-label="Cost of this plan"><div class="receipt-wrap"><div class="receipt" id="rc-' + tid + '"></div></div></aside>';
+  updatePanel(tid);
+}
+
+function updatePanel(tid) {
+  var dk = state.sel[tid].dest, L = state.sel[tid].len, d = DESTS[dk], c = d.len[L], g = tg(dk, L);
+  var r = calc(dk, L, g, heads());
+  document.getElementById("rc-" + tid).innerHTML = receiptHTML(dk, L, g, (c.short || d.short) + ", " + L + " days");
+  var panel = document.getElementById("panel-" + tid);
+  Array.prototype.forEach.call(panel.querySelectorAll(".opt"), function (l) {
+    l.classList.toggle("off", !l.querySelector("input").checked);
+  });
+  if (tid === state.tab) updateBar();
+}
+
+function updateBar() {
+  var tid = state.tab, dk = state.sel[tid].dest, L = state.sel[tid].len;
+  var r = calc(dk, L, tg(dk, L), heads());
+  document.getElementById("mbar").innerHTML = "<span>" + (DESTS[dk].len[L].short || DESTS[dk].short) + ", " + L + " days</span><b>" + range(r.per) + " each</b>";
+}
+
+function selectTab(tid, focus) {
+  state.tab = tid;
+  renderTabs();
+  TABS.forEach(function (t) { document.getElementById("panel-" + t.id).hidden = (t.id !== tid); });
+  if (focus) document.getElementById("tab-" + tid).focus();
+  updateBar();
+  persist();
+}
+
+document.addEventListener("change", function (e) {
+  var x = e.target, k = x.getAttribute("data-kind");
+  if (!k) return;
+  var tid = x.getAttribute("data-tab");
+  var dk = state.sel[tid].dest, L = state.sel[tid].len, g = tg(dk, L), id = x.getAttribute("data-id");
+  if (k === "item") g.items[id] = x.checked;
+  updatePanel(tid);
+  persist();
+});
+
+document.addEventListener("click", function (e) {
+  var reset = e.target.closest('[data-kind="reset"]');
+  if (reset) {
+    var tid = reset.getAttribute("data-tab"), dk = state.sel[tid].dest, L = state.sel[tid].len;
+    state.tg[dk + "-" + L] = fresh(dk, L);
+    renderPanel(tid);
+    persist();
+    return;
+  }
+  var tab = e.target.closest(".tab");
+  if (tab) { selectTab(tab.getAttribute("data-tab"), true); return; }
+  var card = e.target.closest(".card");
+  if (card) {
+    e.preventDefault();
+    selectTab(card.getAttribute("data-tab"), false);
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById("plans").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  }
+});
+
+document.getElementById("tablist").addEventListener("keydown", function (e) {
+  var ids = TABS.map(function (t) { return t.id; }), i = ids.indexOf(state.tab);
+  if (e.key === "ArrowRight") i = (i + 1) % ids.length;
+  else if (e.key === "ArrowLeft") i = (i - 1 + ids.length) % ids.length;
+  else if (e.key === "Home") i = 0;
+  else if (e.key === "End") i = ids.length - 1;
+  else return;
+  e.preventDefault();
+  selectTab(ids[i], true);
+});
+
+renderCrew();
+renderBanner();
+renderCards();
+renderTabs();
+renderPanels();
+updateBar();
+})();
+
+</script>
+</body>
+</html>
